@@ -1,9 +1,9 @@
 <template>
-  <view class="modal-mask" @click="closeModal" v-if="isShow">
-    <view class="modal-container">
+  <view class="modal-mask" @click="onMaskClick" v-if="isShow">
+    <view class="modal-container" @click.stop>
       <view class="modal-title">{{ title }}</view>
       <image :src="imageSrc" mode="aspectFit"></image>
-      <input v-model="answer" placeholder="点击输入答案" />
+      <input v-model="answer" placeholder="点击这里输入上面红框内文字" />
       <view class="modal-buttons">
         <button @click="closeModal">取消</button>
         <button @click="submitAnswer">提交</button>
@@ -50,6 +50,11 @@ export default {
       this.isShow = false;
       this.$emit('confirm', this.answer);
       this.answer = '';
+    },
+    onMaskClick(event) {
+      if (event.target === event.currentTarget) {
+        this.closeModal();
+      }
     }
   }
 };
