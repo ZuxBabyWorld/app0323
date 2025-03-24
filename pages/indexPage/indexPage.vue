@@ -9,10 +9,13 @@
           安全提示必选[<text style="color: #ff00ff;">其他选项</text>]在选[<text style="color: #ff00ff;">不升级</text>]
         </view>
         <view class="card-title">
-          <button @click="openTutorial">登录 教程图 新手必看 否则后果自负</button>
+          <button style="background-color: #8c0000" @click="openTutorial">
+			  <view>①点击查看教程</view>
+			  <view  style="color: yellow;">👉【新手必看】否则会锁机</view>
+		  </button>
         </view>
-        <button @click="copyUsername">点击复制账号</button>
-        <button @click="startQuiz">点击复制密码</button>
+        <button style="background-color: #009400" @click="copyUsername">②点击复制账号</button>
+        <button style="background-color: #00aa7f" @click="startQuiz">③点击复制密码</button>
       </view>
     </view>
     <question-modal

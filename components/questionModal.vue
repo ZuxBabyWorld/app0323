@@ -3,7 +3,8 @@
     <view class="modal-container" @click.stop>
       <view class="modal-title">{{ title }}</view>
       <image :src="imageSrc" mode="aspectFit"></image>
-      <input v-model="answer" placeholder="点击这里输入上面红框内文字" />
+	  <!-- 为 input 添加自定义类名 custom-input -->
+      <input class="custom-input" v-model="answer" placeholder="👉点击这里输入上面红框内文字" />
       <view class="modal-buttons">
         <button @click="closeModal">取消</button>
         <button @click="submitAnswer">提交</button>
@@ -90,5 +91,14 @@ export default {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+}
+
+/* 自定义 input 样式 */
+.custom-input {
+  border: 2px solid #007aff; /* 边框颜色 */
+  border-radius: 5px; /* 边框圆角 */
+  padding: 10px; /* 内边距 */
+  font-size: 20px; /* 字体大小 */
+  color: #333; /* 字体颜色 */
 }
 </style>
